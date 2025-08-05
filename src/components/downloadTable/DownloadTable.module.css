@@ -1,0 +1,237 @@
+.tableContainer {
+    padding: 16px 24px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15);
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.title {
+    font-size: 24px; /* text-2xl */
+    font-weight: 500;
+    margin-bottom: 24px;
+    color: #202124; /* Darker gray for text */
+}
+
+.table {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-spacing: 0;
+    min-width: 600px;
+}
+
+.tableHead {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #dadce0;
+}
+
+.tableHeader {
+    padding: 12px 30px; /* Increased padding for headers */
+    text-align: left;
+    font-size: 12px; /* Smaller font for headers */
+    font-weight: 500; /* Medium weight */
+    color: #5f6368; /* Google's standard gray text */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    white-space: nowrap;
+}
+
+.tableHeader th {
+    padding: 12px 16px; /* Consistent padding for headers */
+}
+
+.tableRow {
+    border-bottom: 1px solid #dadce0;
+    transition: background-color 0.2s ease-in-out;
+}
+.tableHeader th:first-child {
+    padding-left: 16px; /* Align checkbox */
+    width: 40px; /* Give checkbox column a fixed width */
+    position: relative; /* For potential custom checkbox styling */
+    text-indent: -9999px;
+}
+
+.tableRow:last-child {
+    border-bottom: none;
+}
+
+.tableRow:hover {
+    background-color: #f0f4f9;
+}
+
+.tableRow.selected {
+    background-color: #e8f0fe;
+}
+
+.tableRow td {
+    padding: 12px 16px
+}
+
+.tableCell {
+    padding: 12px 16px; /* Consistent padding for cells */
+    font-size: 14px; /* Standard text size */
+    color: #202124; /* Dark text for readability */
+    white-space: nowrap; /* Prevent wrapping by default */
+    overflow: hidden;
+    text-overflow: ellipsis; /* For ellipsis on overflow */
+}
+
+.tableCellPath {
+    font-size: 13px; /* Slightly smaller for path */
+    color: #5f6368; /* Muted color for path */
+    max-width: 300px; /* Adjust as needed for truncation */
+}
+
+.downloadButtonContainer {
+    margin-top: 24px; /* More space above the button */
+    display: flex;
+    justify-content: flex-end;
+}
+
+.downloadButton {
+    padding: 8px 24px; /* Standard button padding */
+    background-color: #1a73e8; /* Google Blue */
+    color: #ffffff;
+    font-weight: 500; /* Medium weight */
+    border-radius: 4px; /* Slightly less rounded for a crisp look */
+    box-shadow: 0 1px 2px 0 rgba(60, 64, 67, 0.3), 0 1px 3px 1px rgba(60, 64, 67, 0.15); /* Subtle shadow */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.downloadButton:hover {
+    background-color: #1764cc; /* Darker blue on hover */
+    box-shadow: 0 1px 3px 0 rgba(60, 64, 67, 0.3), 0 4px 8px 3px rgba(60, 64, 67, 0.15); /* Slightly more pronounced shadow on hover */
+}
+
+.downloadButton:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #8ab4f8; /* Blue focus ring */
+}
+
+.downloadButton:disabled {
+    background-color: #e0e0e0; /* Lighter gray when disabled */
+    color: #a0a0a0;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.noDataMessage {
+    padding: 24px 0;
+    text-align: center;
+    color: #5f6368;
+    font-size: 14px;
+}
+
+.checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    height: 18px;
+    width: 18px;
+    border: 1px solid #dadce0;
+    border-radius: 2px;
+    cursor: pointer;
+    display: inline-block;
+    vertical-align: middle;
+    position: relative;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.checkbox:checked {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+}
+
+.checkbox:checked::after {
+    content: '';
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.checkbox[data-indeterminate="true"] {
+    background-color: #1a73e8;
+    border-color: #1a73e8;
+}
+
+.checkbox[data-indeterminate="true"]::after {
+    content: '';
+    display: block;
+    position: absolute;
+    top: 8px;
+    left: 3px;
+    width: 12px;
+    height: 2px;
+    background: #fff;
+    border-radius: 1px;
+}
+
+.checkbox:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #8ab4f8; /* Blue focus ring */
+}
+
+.checkbox:hover {
+    border-color: #1a73e8; /* Blue border on hover */
+}
+
+.statusDot {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: green;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.toolbar {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding: 0  8px 0;
+    border-bottom: 1px solid #dadce0;
+    min-height: 48px;
+    color: #5f6368;
+    background: #f8f9fa;
+}
+
+.toolbar .checkbox {
+  margin-left: 10px
+}
+
+.selectedCount {
+  font-size: 16px;
+  font-weight: 500;
+  color: #444;
+}
+
+.downloadSelectedBtn {
+  display: flex;
+  align-items: center;
+  background: none;
+  border: none;
+  color: #1a73e8;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 6px 16px;
+  border-radius: 4px;
+  transition: background 0.15s;
+}
+.downloadSelectedBtn:disabled {
+  color: #b0b0b0;
+  cursor: not-allowed;
+}
+.downloadSelectedBtn:not(:disabled):hover {
+  background: #f0f4f9;
+}
